@@ -17,8 +17,6 @@ def save_png(array, fname):
     greyscale = (array.ndim == 2)
     array = (255*array).astype(np.uint32)
     m, n = array.shape[:2]
-    # plt.imshow(array, cmap='gray')
-    # plt.savefig("test.png")
     f = open(fname, 'wb')
     writer = png.Writer(n, m, greyscale=greyscale, bitdepth=16)
     if not greyscale:
